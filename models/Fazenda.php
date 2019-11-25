@@ -38,4 +38,19 @@ include("../config/database.php");
     mysqli_query($connection, $sql);
     echo $sql;
   }
+
+  function selectFazenda($id){
+    global $table;
+    $connection = connect();
+    $sql = "SELECT * FROM $table WHERE idFazenda = $id";
+    $result = mysqli_fetch_all(mysqli_query($connection, $sql));
+  }
+
+  function showAllFazendas(){
+    global $table;
+    $connection = connect();
+    $sql = "SEÇECT * FROM $table";
+    $result = mysqli_fetch_all(mysqli_query($connection, $sql));
+    return $result;
+  }
 ?>
