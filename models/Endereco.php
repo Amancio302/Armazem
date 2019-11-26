@@ -1,9 +1,9 @@
 <?php
   include("../config/database.php");
 
-  class Fazenda{
+  class Endereco{
 
-    private $table = "Fazenda";
+    private $table = "Endereco";
 
     private function connect(){
       global $host, $login, $senha, $database;
@@ -18,10 +18,10 @@
       }
     }
 
-    public function insertNew($nome, $municipio, $extensao, $coordenadas){
+    public function insertNew($cep, $bairro, $rua, $numero, $complemento){
       $connection = $this->connect();
-      $data = "(\"$nome\", \"$municipio\", $extensao, \"$coordenadas\")";
-      $sql = "INSERT INTO $this->table (Nome, Municipio, Extensao, Coordenadas) VALUES $data";
+      $data = "(\"$cep\", \"$bairro\", \"$rua\", \"$numero\", \"$complemento\", )";
+      $sql = "INSERT INTO $this->table (CNPJ, Nome, Telefone) VALUES $data";
       mysqli_query($connection, $sql);
       mysqli_close($connection);
     }
@@ -29,14 +29,13 @@
     public function deleteById($id){
       $connection = $this->connect();
       $sql = "DELETE FROM $this->table WHERE id$this->table = $id";
-      echo $sql;
       mysqli_query($connection, $sql);
       mysqli_close($connection);
     }
 
-    public function updateById($id, $nome, $municipio, $extensao, $coordenadas){
+    public function updateById($id, $cep, $bairro, $rua, $numero, $complemento){
       $connection = $this->connect();
-      $data = "Nome = \"$nome\", Municipio = \"$municipio\", Extensao = \"$extensao\", Coordenadas =  \"$coordenadas\"";
+      $data = "CEP = \"$cep\", Bairro = \"$bairro\", Rua =  \"$rua\", Numero =  \"$numero\", Complemento =  \"$complemento\"";
       $sql = "UPDATE $this->table SET $data WHERE id$this->table = $id";
       mysqli_query($connection, $sql);
       mysqli_close($connection);
