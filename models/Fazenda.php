@@ -29,7 +29,6 @@
     public function deleteById($id){
       $connection = $this->connect();
       $sql = "DELETE FROM $this->table WHERE id$this->table = $id";
-      echo $sql;
       mysqli_query($connection, $sql);
       mysqli_close($connection);
     }
