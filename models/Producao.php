@@ -1,9 +1,9 @@
 <?php
   include("../config/database.php");
 
-  class Fazenda{
+  class Producao{
 
-    private $table = "Fazenda";
+    private $table = "Producao";
 
     private function connect(){
       global $host, $login, $senha, $database;
@@ -18,10 +18,10 @@
       }
     }
 
-    public function insertNew($nome, $municipio, $extensao, $coordenadas){
+    public function insertNew($cnpj, $nome, $telefone){
       $connection = $this->connect();
-      $data = "(\"$nome\", \"$municipio\", $extensao, \"$coordenadas\")";
-      $sql = "INSERT INTO $this->table (Nome, Municipio, Extensao, Coordenadas) VALUES $data";
+      $data = "($cnpj, \"$nome\", \"$telefone\")";
+      $sql = "INSERT INTO $this->table (CNPJ, Nome, Telefone) VALUES $data";
       mysqli_query($connection, $sql);
       mysqli_close($connection);
     }
@@ -33,9 +33,9 @@
       mysqli_close($connection);
     }
 
-    public function updateById($id, $nome, $municipio, $extensao, $coordenadas){
+    public function updateById($id, $cnpj, $nome, $telefone){
       $connection = $this->connect();
-      $data = "Nome = \"$nome\", Municipio = \"$municipio\", Extensao = \"$extensao\", Coordenadas =  \"$coordenadas\"";
+      $data = "CNPJ = \"$cnpj\", Nome = \"$nome\", Telefone =  \"$telefone\"";
       $sql = "UPDATE $this->table SET $data WHERE id$this->table = $id";
       mysqli_query($connection, $sql);
       mysqli_close($connection);
