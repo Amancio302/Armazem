@@ -1,27 +1,14 @@
 <?php
-  include("../config/database.php");
+  include_once("Database_Connect.php");
 
-  class Producao{
+  class Producao extends Database_Connect{
 
     private $table = "Producao";
 
-    private function connect(){
-      global $host, $login, $senha, $database;
-      $connection = mysqli_connect($host, $login, $senha, $database);
-      if(!$connection){
-        echo "Houve uma falha ao conectar ao MySql <br />";
-        exit;
-      }
-      else{
-        echo "Conexão bem-sucedida <br />";
-        return $connection;
-      }
-    }
-
-    public function insertNew($cnpj, $nome, $telefone){
+    public function insertNew($quantidade, $safra, $produtor, $fazenda, $produto, $estoque){
       $connection = $this->connect();
-      $data = "($cnpj, \"$nome\", \"$telefone\")";
-      $sql = "INSERT INTO $this->table (CNPJ, Nome, Telefone) VALUES $data";
+      $data = "($quantidade, $safra, $produtor, $fazenda, $produto, $estoque)";
+      $sql = "INSERT INTO $this->table (Quantidade, Safra, idProdutor, idFazenda, idProduto, idEstoque) VALUES $data";
       mysqli_query($connection, $sql);
       mysqli_close($connection);
     }
@@ -33,9 +20,9 @@
       mysqli_close($connection);
     }
 
-    public function updateById($id, $cnpj, $nome, $telefone){
+    public function updateById($id, $quantidade, $safra, $produtor, $fazenda, $produto, $estoque){
       $connection = $this->connect();
-      $data = "CNPJ = \"$cnpj\", Nome = \"$nome\", Telefone =  \"$telefone\"";
+      $data = "Quantidade = $quantidade, Safra = \"$safra\", idProdutor = $produtor, idFazenda = $fazenda, idProduto = $produto, idEstoque = $estoque";
       $sql = "UPDATE $this->table SET $data WHERE id$this->table = $id";
       mysqli_query($connection, $sql);
       mysqli_close($connection);

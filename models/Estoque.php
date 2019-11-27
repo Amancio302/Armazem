@@ -1,27 +1,14 @@
 <?php
-  include("../config/database.php");
+  include_once("Database_Connect.php");
 
-  class Estoque{
+  class Estoque extends Database_Connect{
 
     private $table = "Estoque";
 
-    private function connect(){
-      global $host, $login, $senha, $database;
-      $connection = mysqli_connect($host, $login, $senha, $database);
-      if(!$connection){
-        echo "Houve uma falha ao conectar ao MySql <br />";
-        exit;
-      }
-      else{
-        echo "Conexão bem-sucedida <br />";
-        return $connection;
-      }
-    }
-
-    public function insertNew($cnpj, $nome, $telefone){
+    public function insertNew($quantidade, $produto){
       $connection = $this->connect();
-      $data = "($cnpj, \"$nome\", \"$telefone\")";
-      $sql = "INSERT INTO $this->table (CNPJ, Nome, Telefone) VALUES $data";
+      $data = "($quantidade, $produto)";
+      $sql = "INSERT INTO $this->table (Quantidade, idProduto) VALUES $data";
       mysqli_query($connection, $sql);
       mysqli_close($connection);
     }
@@ -33,9 +20,21 @@
       mysqli_close($connection);
     }
 
-    public function updateById($id, $cnpj, $nome, $telefone){
+    public function updateById($id, $quantidade, $produto){
       $connection = $this->connect();
-      $data = "CNPJ = \"$cnpj\", Nome = \"$nome\", Telefone =  \"$telefone\"";
+      $data = "Quantidade = $quantidade, idProduto = $produto";
+      $sql = "UPDATE $this->table SET $data WHERE id$this->table = $id";
+      mysqli_query($connection, $sql);
+      mysqli_close($connection);
+    }
+
+    public function sumQuantidade($id, $sum){
+      $connection = $this->connect();
+      $sql = "SELECT Quantidade FROM $this->table WHERE id$this->table = $id";
+      $result = mysqli_fetch_all(mysqli_query($connection, $sql));
+      $quantidade =  $result[0][0];
+      $quantidade = $quantidade + $sum;
+      $data = "Quantidade = $quantidade";
       $sql = "UPDATE $this->table SET $data WHERE id$this->table = $id";
       mysqli_query($connection, $sql);
       mysqli_close($connection);
