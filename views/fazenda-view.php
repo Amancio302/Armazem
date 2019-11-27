@@ -17,13 +17,11 @@
   <nav class="navbar navbar-light bg-light graos-nav">
     <a class="navbar-brand" href="index.html">GrãosDB</a>
   </nav>
-    <ul>
-    <?php
-        foreach(){
 
-          echo <li>
-        }
+    <?php
+      table();
     ?>
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

@@ -20,7 +20,6 @@
   </nav>
 
   <?php
-    echo "inferno";
     table();
   ?>
 
