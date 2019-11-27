@@ -1,37 +1,36 @@
 <?php
   include_once("Database_Connect.php");
 
-  class Transacao extends Database_Connect{
+  class Posse extends Database_Connect{
 
-    private $table = "Transacao";
+    private $table = "Posse";
 
-    public function insertNew($valor, $quantidade, $estoque, $comprador, $transportadora){
+    public function insertNew($produtor, $fazenda){
       $connection = $this->connect();
-      $data = "($valor, $quantidade, $estoque, $comprador, $transportadora)";
-      $sql = "INSERT INTO $this->table (Valor, Quantidade, idEstoque, idComprador, idTransportadora) VALUES $data";
-      mysqli_query($connection, $sql);
-      mysqli_close($connection);
-      $this->sumQuantidade($quantidade*-1);
-    }
-
-    public function deleteById($id){
-      $connection = $this->connect();
-      $sql = "DELETE FROM $this->table WHERE id$this->table = $id";
+      $data = "($produtor, $fazenda)";
+      $sql = "INSERT INTO $this->table (idProdutor, idFazenda) VALUES $data";
       mysqli_query($connection, $sql);
       mysqli_close($connection);
     }
 
-    public function updateById($id, $cnpj, $nome, $telefone){
+    public function deleteById($produtor, $fazenda){
       $connection = $this->connect();
-      $data = "Valor = $valor, Quantidade = $quantidade, idEstoque = $estoque, idComprador = $comprador, idTransportadora = $transportadora";
-      $sql = "UPDATE $this->table SET $data WHERE id$this->table = $id";
+      $sql = "DELETE FROM $this->table WHERE idProdutor = $produtor AND idEndereco = $fazenda";
       mysqli_query($connection, $sql);
       mysqli_close($connection);
     }
 
-    public function selectById($id){
+    public function updateById($produtor, $fazenda){
       $connection = $this->connect();
-      $sql = "SELECT * FROM $this->table WHERE id$this->table = $id";
+      $data = "idProdutor = $produtor, idFazenda = $fazenda";
+      $sql = "UPDATE $this->table SET $data WHERE idProdutor = $produtor AND idEndereco = $fazenda";
+      mysqli_query($connection, $sql);
+      mysqli_close($connection);
+    }
+
+    public function selectById($produtor, $fazenda){
+      $connection = $this->connect();
+      $sql = "SELECT * FROM $this->table WHERE idProdutor = $produtor AND idEndereco = $fazenda";
       $result = mysqli_fetch_all(mysqli_query($connection, $sql), MYSQLI_ASSOC);
       mysqli_close($connection);
       return $result;
