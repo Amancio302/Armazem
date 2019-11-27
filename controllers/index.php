@@ -8,7 +8,4 @@
   include("../models/Transacao.php");
   include("../models/Comprador.php");
   include("../models/Transportadora.php");
-  $produtor = new Produtor();
-  $produtor->deleteById(1);
-  echo "Deu <br />";
 ?>

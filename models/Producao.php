@@ -1,22 +1,9 @@
 <?php
-  include("../config/database.php");
+  include_once("Database_Connect.php");
 
-  class Producao{
+  class Producao extends Database_Connect{
 
     private $table = "Producao";
-
-    private function connect(){
-      global $host, $login, $senha, $database;
-      $connection = mysqli_connect($host, $login, $senha, $database);
-      if(!$connection){
-        echo "Houve uma falha ao conectar ao MySql <br />";
-        exit;
-      }
-      else{
-        echo "Conexão bem-sucedida <br />";
-        return $connection;
-      }
-    }
 
     public function insertNew($cnpj, $nome, $telefone){
       $connection = $this->connect();

@@ -1,27 +1,14 @@
 <?php
-  include("../config/database.php");
+  include_once("Database_Connect.php");
 
-  class Endereco{
+  class Endereco extends Database_Connect{
 
     private $table = "Endereco";
 
-    private function connect(){
-      global $host, $login, $senha, $database;
-      $connection = mysqli_connect($host, $login, $senha, $database);
-      if(!$connection){
-        echo "Houve uma falha ao conectar ao MySql <br />";
-        exit;
-      }
-      else{
-        echo "Conexão bem-sucedida <br />";
-        return $connection;
-      }
-    }
-
     public function insertNew($cep, $bairro, $rua, $numero, $complemento){
       $connection = $this->connect();
-      $data = "(\"$cep\", \"$bairro\", \"$rua\", \"$numero\", \"$complemento\", )";
-      $sql = "INSERT INTO $this->table (CNPJ, Nome, Telefone) VALUES $data";
+      $data = "(\"$cep\", \"$bairro\", \"$rua\", \"$numero\", \"$complemento\")";
+      $sql = "INSERT INTO $this->table (CEP, Bairro, Rua, Numero, Complemento) VALUES $data";
       mysqli_query($connection, $sql);
       mysqli_close($connection);
     }
