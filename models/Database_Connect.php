@@ -6,11 +6,10 @@
       global $host, $login, $senha, $database;
       $connection = mysqli_connect($host, $login, $senha, $database);
       if(!$connection){
-        echo "Houve uma falha ao conectar ao MySql <br />";
+        return false;
         exit;
       }
       else{
-        echo "Conexão bem-sucedida <br />";
         return $connection;
       }
     }
