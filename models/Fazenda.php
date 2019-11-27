@@ -40,8 +40,6 @@
       $connection = $this->connect();
       $sql = "SELECT * FROM $this->table";
       $query = mysqli_query($connection, $sql);
-      if($query == false)
-        return false;
       $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
       mysqli_close($connection);
       return $result;
