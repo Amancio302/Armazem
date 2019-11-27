@@ -39,6 +39,7 @@
     public function showAll(){
       $connection = $this->connect();
       $sql = "SELECT * FROM $this->table";
+      echo $sql;
       $query = mysqli_query($connection, $sql);
       $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
       mysqli_close($connection);
