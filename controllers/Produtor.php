@@ -4,24 +4,27 @@
 
     function getAll(){
       $produtor = new Produtor();
-      $produtor->insertNew(11111111111111, "Jailsno", "998888997");
       return $produtor->showAll();
     }
 
-    function getById(){
-
+    function getById($id){
+      $produtor = new Produtor();
+      return $produtor->showById($id);
     }
 
-    function setNew(){
-
+    function setNew($cnpj, $nome, $telefone){
+      $produtor = new Produtor();
+      $produtor->insertNew($cnpj, $nome, $telefone);
     }
 
-    function updateById(){
-
+    function updateById($id, $cnpj, $nome, $telefone){
+      $produtor = new Produtor();
+      $produtor->updateById($id , $cnpj, $nome, $telefone);
     }
 
-    function deleteById(){
-
+    function deleteById($id){
+      $produtor = new Produtor();  
+      $produtor->deleteById($id);
     }
 
     function table(){
