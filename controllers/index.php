@@ -1,3 +1,3 @@
 <?php
-    readfile("../views/index.html");
+    include_once("../views/index.html");
 ?>
