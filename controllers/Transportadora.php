@@ -7,48 +7,51 @@
       return $Transportadora->showAll();
     }
 
-    function getById($id){
-      $Transportadora = new Transportadora();
-      return $Transportadora->showById($id);
-    }
-
-    function setNew($cnpj, $nome, $telefone){
-      $Transportadora = new Transportadora();
-      $Transportadora->insertNew($cnpj, $nome, $telefone);
-    }
-
-    function updateById($id, $cnpj, $nome, $telefone){
-      $Transportadora = new Transportadora();
-      $Transportadora->updateById($id , $cnpj, $nome, $telefone);
-    }
-
     function deleteById($id){
       $Transportadora = new Transportadora();
       $Transportadora->deleteById($id);
+      header("Location: Transportadora.php");
     }
 
     function table(){
       $result = getAll();
-      echo "<form name=\"formProdutor\" method=\"POST\" action=\"setNew\">
-              <table border=\"0\" align=\"center\" width=\"60%\">
-                <tr bgcolor=\"grey\">
-                  <td width=\"50%\">Nome</td>
-                  <td width=\"20%\">Telefone</td>
-                  <td width=\"30%\"></td>
-                </tr>";
+      echo "  <table class=\"table\">
+                <thead>
+                  <tr>
+                    <th scope=\"col\">Nome</th>
+                    <th scope=\"col\">CNPJ</th>
+                    <th scope=\"col\">Telefone</th>
+                    <th scope=\"col\">CEP</th>
+                    <th scope=\"col\">Bairro</th>
+                    <th scope=\"col\">Rua</th>
+                    <th scope=\"col\">Numero</th>
+                    <th scope=\"col\">Complemento</th>
+                    <th scope=\"col\">Opções</th>
+                  </tr>
+                </thead>
+                <tbody>";
       foreach($result as $dados){
-        echo   "<tr>
-                  <td>".$dados['Nome']."</td>
-                  <td>".$dados['Telefone']."</td>
-                </tr>";
+        echo     "<tr>
+                    <td>$dados[Nome]</td>
+                    <td>$dados[CNPJ]</td>
+                    <td>$dados[Telefone]</td>
+                    <td>$dados[CEP]</td>
+                    <td>$dados[Bairro]</td>
+                    <td>$dados[Rua]</td>
+                    <td>$dados[Numero]</td>
+                    <td>$dados[Complemento]</td>
+                    <td>
+                      <a href=\"editarTransportadora.php?id=$dados[idTransportadora]\"><button type=\"button\" class=\"btn btn-primary\">Editar</button></a>
+                      <a href=\"Transportadora.php?function=delete&id=$dados[idTransportadora]\"><button type=\"button\" class=\"btn btn-danger\">Excluir</button<\a>
+                    </td>
+                  </tr>";
       }
-      echo     "<tr bgcolor=\"grey\">
-                  <td colspan=\"3\" height=\"5\"></td>
-                </tr>
-                <tr>
-                  <td colspan=\"3\" align=\"center\"><input type=\"submit\" value=\"Incluir Novo Contato\"></td>
-                </tr>
+      echo     "</tbody>
               </table>
-            </form>";
+              <a href=\"./inserirTransportadora.php\"><button type=\"button\" class=\"btn btn-success\">Incluir</button></a>";
+    }
+
+    if(isset($_GET['function']) and isset($_GET['id'])) {
+      deleteById($_GET['id']);
     }
 ?>
