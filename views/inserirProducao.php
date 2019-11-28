@@ -20,18 +20,33 @@
     <a class="navbar-brand" href="./index.php">GrãosDB</a>
   </nav>
 
-  <h1 class="text-center pt-1">Produção</h1>
+  <h1 class="text-center pt-1">Producao</h1>
 
-  <form>
-    <div class="form-group col-md-4">
-      <label for="inputCity">Quantidade</label>
-      <input type="text" class="form-control" id="inputNumber">
+  <form method="POST">
+    <div class="form-group col-md-6 pt-2">
+      <label for="inputQuantidade">Quantidade</label>
+      <input type="text" class="form-control" name="Quantidade">
     </div>
-    <div class="form-group col-md-2">
-      <label for="inputZip">Safra</label>
-      <input type="text" class="form-control" id="inputZip">
+    <div class="form-group col-md-6">
+      <label for="inputSafra">Safra</label>
+      <input type="text" class="form-control" name="Safra">
     </div>
-  </div>
+    <div class="form-group col-md-6 pt-2">
+      <label for="inputProdutor">Produtor</label>
+      <input type="text" class="form-control" name="Produtor">
+    </div>
+    <div class="form-group col-md-6 pt-2">
+      <label for="inputFazenda">Fazenda</label>
+      <input type="text" class="form-control" name="Fazenda">
+    </div>
+    <div class="form-group col-md-6 pt-2">
+      <label for="inputProduto">Produto</label>
+      <input type="text" class="form-control" name="Produto">
+    </div>
+    <div class="form-group col-md-6 pt-2">
+      <label for="inputEstoque">Estoque</label>
+      <input type="text" class="form-control" name="Estoque">
+    </div>
   <button type="submit" class="btn btn-success ml-3">Inserir</button>
 </form>
 

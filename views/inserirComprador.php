@@ -22,52 +22,41 @@
 
   <h1 class="text-center pt-1">Comprador</h1>
 
-  <form>
-    
+  <form method="POST">
     <div class="form-group col-md-6 pt-2">
-      <label for="inputEmail4">Nome</label>
-      <input type="text" class="form-control" id="inputName">
+      <label for="inputNome">Nome</label>
+      <input type="text" class="form-control" name="Nome">
     </div>
-
-    <div class="form-group col-md-4">
-        <label for="inputCity">CNPJ</label>
-        <input type="text" class="form-control" id="inputCity">
-    </div>
-
-    <div class="form-group col-md-2">
-        <label for="inputZip">Telefone</label>
-        <input type="text" class="form-control" id="inputZip">
-      </div>
-
     <div class="form-group col-md-6">
-      <label for="inputCity">Rua</label>
-      <input type="text" class="form-control" id="inputCity">
+      <label for="inputCNPJ">CNPJ</label>
+      <input type="text" class="form-control" name="CNPJ">
     </div>
-
-    <div class="form-group col-md-4">
-      <label for="inputCity">Bairro</label>
-      <input type="text" class="form-control" id="inputCity">
+    <div class="form-group col-md-6">
+      <label for="inputTelefone">Telefone</label>
+      <input type="text" class="form-control" name="Telefone">
     </div>
-
-    <div class="form-group col-md-2">
-      <label for="inputZip">Número</label>
-      <input type="text" class="form-control" id="inputZip">
+    <div class="form-group col-md-6">
+      <label for="inputCEP">CEP</label>
+      <input type="text" class="form-control" name="CEP">
     </div>
-
-    <div class="form-group col-md-2">
-        <label for="inputZip">CEP</label>
-        <input type="text" class="form-control" id="inputZip">
+    <div class="form-group col-md-6">
+      <label for="inputBairro">Bairro</label>
+      <input type="text" class="form-control" name="Bairro">
     </div>
-
-    <div class="form-group col-md-2">
-        <label for="inputZip">Complemento</label>
-        <input type="text" class="form-control" id="inputZip">
+    <div class="form-group col-md-6">
+      <label for="inputRua">Rua</label>
+      <input type="text" class="form-control" name="Rua">
     </div>
-
+    <div class="form-group col-md-6">
+      <label for="inputNumero">Número</label>
+      <input type="text" class="form-control" name="Numero">
     </div>
-    <button type="submit" class="btn btn-success ml-3 mb-2">Inserir</button>
-    </form>
-
+    <div class="form-group col-md-6">
+      <label for="inputComplemento">Complemento</label>
+      <textarea class="form-control" name="Complemento" rows="3"></textarea>
+    </div>
+  <button type="submit" class="btn btn-success ml-3">Inserir</button>
+</form>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
