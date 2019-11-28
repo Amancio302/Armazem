@@ -37,7 +37,7 @@
         <label for="exampleFormControlTextarea1">Descrição</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
       </div>
-  <button type="submit" class="btn btn-primary ml-3">Inserir</button>
+  <button type="submit" class="btn btn-danger ml-3">Inserir</button>
 </form>
 
   <!-- Optional JavaScript -->
