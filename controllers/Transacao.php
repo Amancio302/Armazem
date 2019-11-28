@@ -33,9 +33,9 @@
                     <td>$dados[Valor]</td>
                     <td>$dados[Data]</td>
                     <td>$dados[Quantidade]</td>
-                    <td>$dados[Estoque]</td>
-                    <td>$dados[Comprador]</td>
-                    <td>$dados[Transportadora]</td>
+                    <td>$dados[idEstoque]</td>
+                    <td>$dados[idComprador]</td>
+                    <td>$dados[idTransportadora]</td>
                     <td>
                       <a href=\"editarTransacao.php?id=$dados[idTransacao]\"><button type=\"button\" class=\"btn btn-primary\">Editar</button></a>
                       <a href=\"Transacao.php?function=delete&id=$dados[idTransacao]\"><button type=\"button\" class=\"btn btn-danger\">Excluir</button<\a>

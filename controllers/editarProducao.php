@@ -4,7 +4,7 @@
 
     function updateById($data){
       $Producao = new Producao();
-      $Producao->updateById($data['id'], $data['nome'], $data['tipo'], $data['especificacao']);
+      $Producao->updateById($data['id'], $data['Quantidade'], $data['Safra'], $data['Producao'], $data['Fazenda'], $data['Produto'], $data['Estoque']);
     }
 
     function getById($id){
@@ -19,18 +19,30 @@
         echo "<form method=\"POST\">
               <row>
                 <div class=\"form-group col-md-6 pt-2\">
-                  <input type=\"hidden\" name=\"id\" value=\"$Produtor[idProdutor]\">
-                  <label for=\"inputNome\">Nome</label>
-                  <input type=\"text\" class=\"form-control\" name=\"nome\" value=\"$Produtor[Nome]\">
+                  <input type=\"hidden\" name=\"id\" value=\"$Producao[idProducao]\">
+                  <label for=\"inputNome\">Quantidade</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Quantidade\" value=\"$Producao[Quantidade]\">
                 </div>
                 <div class=\"form-group col-md-6\">
-                  <label for=\"inputTipo\">Tipo</label>
-                  <input type=\"text\" class=\"form-control\" name=\"tipo\" value=\"$Produtor[Tipo]\">
+                  <label for=\"inputTipo\">Safra</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Safra\" value=\"$Producao[Safra]\">
                 </div>
                 <div class=\"form-group col-md-6\">
-                    <label for=\"inputEspecificacao\">Descrição</label>
-                    <textarea class=\"form-control\" name=\"especificacao\" rows=\"3\">$Produtor[Especificacao]</textarea>
-                  </div>
+                  <label for=\"inputTipo\">Producao</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Producao\" value=\"$Producao[Producao]\">
+                </div>
+                <div class=\"form-group col-md-6\">
+                  <label for=\"inputTipo\">Fazenda</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Fazenda\" value=\"$Producao[Fazenda]\">
+                </div>
+                <div class=\"form-group col-md-6\">
+                  <label for=\"inputTipo\">Produto</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Produto\" value=\"$Producao[Produto]\">
+                </div>
+                <div class=\"form-group col-md-6\">
+                  <label for=\"inputTipo\">Estoque</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Estoque\" value=\"$Producao[Estoque]\">
+                </div>
               <button type=\"submit\" class=\"btn btn-primary ml-3\">Alterar</button>
               </row>
             </form>";

@@ -4,7 +4,7 @@
 
     function updateById($data){
       $Transacao = new Transacao();
-      $Transacao->updateById($data['id'], $data['nome'], $data['tipo'], $data['especificacao']);
+      $Transacao->updateById($data['id'], $data['Valor'], $data['Quantidade'], $data['Estoque'], $data['Comprador'], $data['Transportadora']);
     }
 
     function getById($id){
@@ -19,18 +19,26 @@
         echo "<form method=\"POST\">
               <row>
                 <div class=\"form-group col-md-6 pt-2\">
-                  <input type=\"hidden\" name=\"id\" value=\"$Produtor[idProdutor]\">
-                  <label for=\"inputNome\">Nome</label>
-                  <input type=\"text\" class=\"form-control\" name=\"nome\" value=\"$Produtor[Nome]\">
+                  <input type=\"hidden\" name=\"id\" value=\"$Transacao[idTransacao]\">
+                  <label for=\"inputNome\">Valor</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Valor\" value=\"$Transacao[Valor]\">
                 </div>
                 <div class=\"form-group col-md-6\">
-                  <label for=\"inputTipo\">Tipo</label>
-                  <input type=\"text\" class=\"form-control\" name=\"tipo\" value=\"$Produtor[Tipo]\">
+                  <label for=\"inputTipo\">Quantidade</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Quantidade\" value=\"$Transacao[Quantidade]\">
                 </div>
                 <div class=\"form-group col-md-6\">
-                    <label for=\"inputEspecificacao\">Descrição</label>
-                    <textarea class=\"form-control\" name=\"especificacao\" rows=\"3\">$Produtor[Especificacao]</textarea>
-                  </div>
+                  <label for=\"inputTipo\">Estoque</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Estoque\" value=\"$Transacao[Estoque]\">
+                </div>
+                <div class=\"form-group col-md-6\">
+                  <label for=\"inputTipo\">Comprador</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Comprador\" value=\"$Transacao[Comprador]\">
+                </div>
+                <div class=\"form-group col-md-6\">
+                  <label for=\"inputTipo\">Transportadora</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Transportadora\" value=\"$Transacao[Transportadora]\">
+                </div>
               <button type=\"submit\" class=\"btn btn-primary ml-3\">Alterar</button>
               </row>
             </form>";
