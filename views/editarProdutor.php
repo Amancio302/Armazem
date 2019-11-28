@@ -20,43 +20,11 @@
     <a class="navbar-brand" href="./index.php">GrãosDB</a>
   </nav>
 
-  <h1 class="text-center pt-1">Transportadora</h1>
+  <h1 class="text-center pt-1">Produtor</h1>
 
-  <form method="POST">
-    <div class="form-group col-md-6 pt-2">
-      <label for="inputNome">Nome</label>
-      <input type="text" class="form-control" name="Nome">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputCNPJ">CNPJ</label>
-      <input type="text" class="form-control" name="CNPJ">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputTelefone">Telefone</label>
-      <input type="text" class="form-control" name="Telefone">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputCEP">CEP</label>
-      <input type="text" class="form-control" name="CEP">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputBairro">Bairro</label>
-      <input type="text" class="form-control" name="Bairro">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputRua">Rua</label>
-      <input type="text" class="form-control" name="Rua">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputNumero">Número</label>
-      <input type="text" class="form-control" name="Numero">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputComplemento">Complemento</label>
-      <textarea class="form-control" name="Complemento" rows="3"></textarea>
-    </div>
-  <button type="submit" class="btn btn-success ml-3">Inserir</button>
-</form>
+  <?php
+    form();
+  ?>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -22,23 +22,23 @@
 
   <h1 class="text-center pt-1">Produtor</h1>
 
-  <form>
-
+  <form method="POST">
     <div class="form-group col-md-6 pt-2">
-      <label for="inputEmail4">Nome</label>
-      <input type="text" class="form-control" id="inputName">
+      <label for="inputNome">Nome</label>
+      <input type="text" class="form-control" name="Nome">
     </div>
-
-    <div class="form-group col-md-4">
-        <label for="inputCity">CNPJ</label>
-        <input type="text" class="form-control" id="inputCity">
+    <div class="form-group col-md-6">
+      <label for="inputCNPJ">CNPJ</label>
+      <input type="text" class="form-control" name="CNPJ">
     </div>
-
-    <div class="form-group col-md-2">
-      <label for="inputZip">Telefone</label>
-      <input type="text" class="form-control" id="inputNumber">
+    <div class="form-group col-md-6">
+      <label for="inputTelefone">Telefone</label>
+      <input type="text" class="form-control" name="Telefone">
     </div>
-  </div>
+    <div class="form-group col-md-6">
+      <label for="inputDataIngresso">Data de Ingresso</label>
+      <input type="text" class="form-control" name="DataIngresso">
+    </div>
   <button type="submit" class="btn btn-success ml-3">Inserir</button>
 </form>
 

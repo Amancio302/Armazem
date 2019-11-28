@@ -20,18 +20,21 @@
     <a class="navbar-brand" href="./index.php">GrãosDB</a>
   </nav>
 
-  <h1 class="text-center pt-1">Transação</h1>
+  <h1 class="text-center pt-1">Transacao</h1>
 
-  <form>
-    <div class="form-group col-md-2">
-      <label for="inputCity">Valor</label>
-      <input type="text" class="form-control" id="inputCity">
+  <form method="POST">
+    <div class="form-group col-md-6 pt-2">
+      <label for="inputValor">Valor</label>
+      <input type="text" class="form-control" name="Valor">
     </div>
-    <div class="form-group col-md-2">
-      <label for="inputZip">Quantidade</label>
-      <input type="text" class="form-control" id="inputZip">
+    <div class="form-group col-md-6">
+      <label for="inputDataTransacao">Data de transação</label>
+      <input type="text" class="form-control" name="DataTransacao">
     </div>
-  </div>
+    <div class="form-group col-md-6">
+      <label for="inputQuantidade">Quantidade</label>
+      <input type="text" class="form-control" name="Quantidade">
+    </div>
   <button type="submit" class="btn btn-success ml-3">Inserir</button>
 </form>
 

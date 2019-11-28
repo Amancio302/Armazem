@@ -22,29 +22,23 @@
 
   <h1 class="text-center pt-1">Fazenda</h1>
 
-  <form>
-
+  <form method="POST">
     <div class="form-group col-md-6 pt-2">
-      <label for="inputEmail4">Nome</label>
-      <input type="text" class="form-control" id="inputName">
+      <label for="inputNome">Nome</label>
+      <input type="text" class="form-control" name="Nome">
     </div>
-
     <div class="form-group col-md-6">
-      <label for="inputCity">Município</label>
-      <input type="text" class="form-control" id="inputCity">
+      <label for="inputMunicipio">Município</label>
+      <input type="text" class="form-control" name="Municipio">
     </div>
-
-    <div class="form-group col-md-4">
-      <label for="inputCity">Extensão</label>
-      <input type="text" class="form-control" id="inputCity">
+    <div class="form-group col-md-6">
+      <label for="inputExtensao">Extensão</label>
+      <input type="text" class="form-control" name="Extensão">
     </div>
-
-    <div class="form-group col-md-2">
-      <label for="inputZip">Coordenadas</label>
-      <input type="text" class="form-control" id="inputZip">
+    <div class="form-group col-md-6">
+      <label for="inputCoordenadas">Coordenadas</label>
+      <input type="text" class="form-control" name="Coordenadas">
     </div>
-
-  </div>
   <button type="submit" class="btn btn-success ml-3">Inserir</button>
 </form>
 
