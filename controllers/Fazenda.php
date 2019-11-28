@@ -1,54 +1,49 @@
 <?php
     include_once("../models/Fazenda.php");
-    include_once("../views/fazenda-view.php");
+    include_once("../views/Fazenda-view.php");
 
     function getAll(){
-      $fazenda = new Fazenda();
-      return $fazenda->showAll();
-    }
-
-    function getById($id){
-      $fazenda = new Fazenda();
-      return $fazenda->showById($id);
-    }
-
-    function setNew($cnpj, $nome, $telefone){
-      $fazenda = new Fazenda();
-      $fazenda->insertNew($cnpj, $nome, $telefone);
-    }
-
-    function updateById($id, $cnpj, $nome, $telefone){
-      $fazenda = new Fazenda();
-      $fazenda->updateById($id , $cnpj, $nome, $telefone);
+      $Fazenda = new Fazenda();
+      return $Fazenda->showAll();
     }
 
     function deleteById($id){
-      $fazenda = new Fazenda();
-      $fazenda->deleteById($id);
+      $Fazenda = new Fazenda();
+      $Fazenda->deleteById($id);
+      header("Location: Fazenda.php");
     }
 
     function table(){
       $result = getAll();
-      echo "<form name=\"formProdutor\" method=\"POST\" action=\"setNew\">
-              <table border=\"0\" align=\"center\" width=\"60%\">
-                <tr bgcolor=\"grey\">
-                  <td width=\"50%\">Nome</td>
-                  <td width=\"20%\">Telefone</td>
-                  <td width=\"30%\"></td>
-                </tr>";
+      echo "  <table class=\"table\">
+                <thead>
+                  <tr>
+                    <th scope=\"col\">Nome</th>
+                    <th scope=\"col\">Municipio</th>
+                    <th scope=\"col\">Extensao</th>
+                    <th scope=\"col\">Coordenadas</th>
+                    <th scope=\"col\">Opções</th>
+                  </tr>
+                </thead>
+                <tbody>";
       foreach($result as $dados){
-        echo   "<tr>
-                  <td>".$dados['Nome']."</td>
-                  <td>".$dados['Telefone']."</td>
-                </tr>";
+        echo     "<tr>
+                    <td>$dados[Nome]</td>
+                    <td>$dados[Municipio]</td>
+                    <td>$dados[Extensao]</td>
+                    <td>$dados[Coordenadas]</td>
+                    <td>
+                      <a href=\"editarFazenda.php?id=$dados[idFazenda]\"><button type=\"button\" class=\"btn btn-primary\">Editar</button></a>
+                      <a href=\"Fazenda.php?function=delete&id=$dados[idFazenda]\"><button type=\"button\" class=\"btn btn-danger\">Excluir</button<\a>
+                    </td>
+                  </tr>";
       }
-      echo     "<tr bgcolor=\"grey\">
-                  <td colspan=\"3\" height=\"5\"></td>
-                </tr>
-                <tr>
-                  <td colspan=\"3\" align=\"center\"><input type=\"submit\" value=\"Incluir Novo Contato\"></td>
-                </tr>
+      echo     "</tbody>
               </table>
-            </form>";
+              <a href=\"./inserirFazenda.php\"><button type=\"button\" class=\"btn btn-success\">Incluir</button></a>";
+    }
+
+    if(isset($_GET['function']) and isset($_GET['id'])) {
+      deleteById($_GET['id']);
     }
 ?>

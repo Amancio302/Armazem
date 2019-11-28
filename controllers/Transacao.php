@@ -7,48 +7,47 @@
       return $Transacao->showAll();
     }
 
-    function getById($id){
-      $Transacao = new Transacao();
-      return $Transacao->showById($id);
-    }
-
-    function setNew($cnpj, $nome, $telefone){
-      $Transacao = new Transacao();
-      $Transacao->insertNew($cnpj, $nome, $telefone);
-    }
-
-    function updateById($id, $cnpj, $nome, $telefone){
-      $Transacao = new Transacao();
-      $Transacao->updateById($id , $cnpj, $nome, $telefone);
-    }
-
     function deleteById($id){
       $Transacao = new Transacao();
       $Transacao->deleteById($id);
+      header("Location: Transacao.php");
     }
 
     function table(){
       $result = getAll();
-      echo "<form name=\"formProdutor\" method=\"POST\" action=\"setNew\">
-              <table border=\"0\" align=\"center\" width=\"60%\">
-                <tr bgcolor=\"grey\">
-                  <td width=\"50%\">Nome</td>
-                  <td width=\"20%\">Telefone</td>
-                  <td width=\"30%\"></td>
-                </tr>";
+      echo "  <table class=\"table\">
+                <thead>
+                  <tr>
+                    <th scope=\"col\">Valor</th>
+                    <th scope=\"col\">Data</th>
+                    <th scope=\"col\">Quantidade</th>
+                    <th scope=\"col\">Estoque</th>
+                    <th scope=\"col\">Comprador</th>
+                    <th scope=\"col\">Transportadora</th>
+                    <th scope=\"col\">Opções</th>
+                  </tr>
+                </thead>
+                <tbody>";
       foreach($result as $dados){
-        echo   "<tr>
-                  <td>".$dados['Nome']."</td>
-                  <td>".$dados['Telefone']."</td>
-                </tr>";
+        echo     "<tr>
+                    <td>$dados[Valor]</td>
+                    <td>$dados[Data]</td>
+                    <td>$dados[Quantidade]</td>
+                    <td>$dados[Estoque]</td>
+                    <td>$dados[Comprador]</td>
+                    <td>$dados[Transportadora]</td>
+                    <td>
+                      <a href=\"editarTransacao.php?id=$dados[idTransacao]\"><button type=\"button\" class=\"btn btn-primary\">Editar</button></a>
+                      <a href=\"Transacao.php?function=delete&id=$dados[idTransacao]\"><button type=\"button\" class=\"btn btn-danger\">Excluir</button<\a>
+                    </td>
+                  </tr>";
       }
-      echo     "<tr bgcolor=\"grey\">
-                  <td colspan=\"3\" height=\"5\"></td>
-                </tr>
-                <tr>
-                  <td colspan=\"3\" align=\"center\"><input type=\"submit\" value=\"Incluir Novo Contato\"></td>
-                </tr>
+      echo     "</tbody>
               </table>
-            </form>";
+              <a href=\"./inserirTransacao.php\"><button type=\"button\" class=\"btn btn-success\">Incluir</button></a>";
+    }
+
+    if(isset($_GET['function']) and isset($_GET['id'])) {
+      deleteById($_GET['id']);
     }
 ?>
