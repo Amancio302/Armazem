@@ -20,20 +20,11 @@
     <a class="navbar-brand" href="./index.php">GrãosDB</a>
   </nav>
 
-  <h1 class="text-center pt-1">Produção</h1>
+  <h1 class="text-center pt-1">Produto</h1>
 
-  <form>
-    <div class="form-group col-md-4">
-      <label for="inputCity">Quantidade</label>
-      <input type="text" class="form-control" id="inputNumber">
-    </div>
-    <div class="form-group col-md-2">
-      <label for="inputZip">Safra</label>
-      <input type="text" class="form-control" id="inputZip">
-    </div>
-  </div>
-  <button type="submit" class="btn btn-danger ml-3">Excluir</button>
-</form>
+  <?php
+    form();
+  ?>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
