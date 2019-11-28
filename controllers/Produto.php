@@ -7,30 +7,15 @@
       return $Produto->showAll();
     }
 
-    function getById($id){
-      $Produto = new Produto();
-      return $Produto->showById($id);
-    }
-
-    function setNew($cnpj, $nome, $telefone){
-      $Produto = new Produto();
-      $Produto->insertNew($cnpj, $nome, $telefone);
-    }
-
-    function updateById($id, $cnpj, $nome, $telefone){
-      $Produto = new Produto();
-      $Produto->updateById($id , $cnpj, $nome, $telefone);
-    }
-
     function deleteById($id){
       $Produto = new Produto();
       $Produto->deleteById($id);
+      header("Location: Produto.php");
     }
 
     function table(){
       $result = getAll();
-      echo "<form name=\"formProdutor\" method=\"POST\" action=\"setNew\">
-              <table class=\"table\">
+      echo "  <table class=\"table\">
                 <thead>
                   <tr>
                     <th scope=\"col\">Nome</th>
@@ -46,15 +31,17 @@
                     <td>$dados[Tipo]</td>
                     <td>$dados[Especificacao]</td>
                     <td>
-                      <a href=\"Produto.php/updateById?search=$dados[idProduto]\"><button type=\"button\" class=\"btn btn-primary\">Editar</button></a>
-                      <a href=\"deleteById/$dados[idProduto]\"><button type=\"button\" class=\"btn btn-danger\">Excluir</button<\a>
+                      <a href=\"editarProduto.php?id=$dados[idProduto]\"><button type=\"button\" class=\"btn btn-primary\">Editar</button></a>
+                      <a href=\"Produto.php?function=delete&id=$dados[idProduto]\"><button type=\"button\" class=\"btn btn-danger\">Excluir</button<\a>
                     </td>
                   </tr>";
       }
       echo     "</tbody>
-                  <tr><td colspan=\"3\" align=\"center\"><input type=\"submit\" value=\"Incluir Novo Contato\"></td>
-                </tr>
               </table>
-            </form>";
+              <a href=\"./inserirProduto.php\"><button type=\"button\" class=\"btn btn-success\">Incluir</button></a>";
+    }
+
+    if(isset($_GET['function']) and isset($_GET['id'])) {
+      deleteById($_GET['id']);
     }
 ?>
