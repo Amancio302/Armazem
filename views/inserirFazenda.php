@@ -45,7 +45,7 @@
     </div>
 
   </div>
-  <button type="submit" class="btn btn-primary ml-3">Inserir</button>
+  <button type="submit" class="btn btn-success ml-3">Inserir</button>
 </form>
 
   <!-- Optional JavaScript -->

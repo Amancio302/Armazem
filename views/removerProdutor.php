@@ -39,7 +39,7 @@
       <input type="text" class="form-control" id="inputNumber">
     </div>
   </div>
-  <button type="submit" class="btn btn-primary ml-3">Inserir</button>
+  <button type="submit" class="btn btn-danger ml-3">Excluir</button>
 </form>
 
   <!-- Optional JavaScript -->
