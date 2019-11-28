@@ -4,7 +4,7 @@
 
     function updateById($data){
       $Endereco = new Endereco();
-      $Endereco->updateById($data['id'], $data['nome'], $data['tipo'], $data['especificacao']);
+      $Endereco->updateById($data['id'], $data['CEP'], $data['Bairro'], $data['Rua'], $data['Numero'], $data['Complemento']);
     }
 
     function getById($id){
@@ -19,18 +19,26 @@
         echo "<form method=\"POST\">
               <row>
                 <div class=\"form-group col-md-6 pt-2\">
-                  <input type=\"hidden\" name=\"id\" value=\"$Produtor[idProdutor]\">
-                  <label for=\"inputNome\">Nome</label>
-                  <input type=\"text\" class=\"form-control\" name=\"nome\" value=\"$Produtor[Nome]\">
+                  <input type=\"hidden\" name=\"id\" value=\"$Endereco[idEndereco]\">
+                  <label for=\"inputNome\">CEP</label>
+                  <input type=\"text\" class=\"form-control\" name=\"CEP\" value=\"$Endereco[CEP]\">
                 </div>
                 <div class=\"form-group col-md-6\">
-                  <label for=\"inputTipo\">Tipo</label>
-                  <input type=\"text\" class=\"form-control\" name=\"tipo\" value=\"$Produtor[Tipo]\">
+                  <label for=\"inputTipo\">Bairro</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Bairro\" value=\"$Endereco[Bairro]\">
                 </div>
                 <div class=\"form-group col-md-6\">
-                    <label for=\"inputEspecificacao\">Descrição</label>
-                    <textarea class=\"form-control\" name=\"especificacao\" rows=\"3\">$Produtor[Especificacao]</textarea>
-                  </div>
+                  <label for=\"inputTipo\">Rua</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Rua\" value=\"$Endereco[Rua]\">
+                </div>
+                <div class=\"form-group col-md-6\">
+                  <label for=\"inputTipo\">Numero</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Numero\" value=\"$Endereco[Numero]\">
+                </div>
+                <div class=\"form-group col-md-6\">
+                  <label for=\"inputTipo\">Complemento</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Complemento\" value=\"$Endereco[Complemento]\">
+                </div>
               <button type=\"submit\" class=\"btn btn-primary ml-3\">Alterar</button>
               </row>
             </form>";

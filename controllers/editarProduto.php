@@ -17,6 +17,7 @@
         $Produto = getById($_GET['id']);
         $Produto = $Produto[0];
         echo "<form method=\"POST\">
+                <row>
                 <div class=\"form-group col-md-6 pt-2\">
                   <input type=\"hidden\" name=\"id\" value=\"$Produto[idProduto]\">
                   <label for=\"inputNome\">Nome</label>
@@ -30,6 +31,7 @@
                     <label for=\"inputEspecificacao\">Descrição</label>
                     <textarea class=\"form-control\" name=\"especificacao\" rows=\"3\">$Produto[Especificacao]</textarea>
                   </div>
+                </row>
               <button type=\"submit\" class=\"btn btn-primary ml-3\">Alterar</button>
             </form>";
         }

@@ -35,10 +35,6 @@
       <label for="inputTelefone">Telefone</label>
       <input type="text" class="form-control" name="Telefone">
     </div>
-    <div class="form-group col-md-6">
-      <label for="inputDataIngresso">Data de Ingresso</label>
-      <input type="text" class="form-control" name="DataIngresso">
-    </div>
   <button type="submit" class="btn btn-success ml-3">Inserir</button>
 </form>
 

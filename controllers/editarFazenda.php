@@ -4,7 +4,7 @@
 
     function updateById($data){
       $Fazenda = new Fazenda();
-      $Fazenda->updateById($data['id'], $data['nome'], $data['tipo'], $data['especificacao']);
+      $Fazenda->updateById($data['id'], $data['Nome'], $data['Municipio'], $data['Extensao'], $data['Coordenadas']);
     }
 
     function getById($id){
@@ -19,18 +19,22 @@
         echo "<form method=\"POST\">
               <row>
                 <div class=\"form-group col-md-6 pt-2\">
-                  <input type=\"hidden\" name=\"id\" value=\"$Produtor[idProdutor]\">
+                  <input type=\"hidden\" name=\"id\" value=\"$Fazenda[idFazenda]\">
                   <label for=\"inputNome\">Nome</label>
-                  <input type=\"text\" class=\"form-control\" name=\"nome\" value=\"$Produtor[Nome]\">
+                  <input type=\"text\" class=\"form-control\" name=\"Nome\" value=\"$Fazenda[Nome]\">
                 </div>
                 <div class=\"form-group col-md-6\">
-                  <label for=\"inputTipo\">Tipo</label>
-                  <input type=\"text\" class=\"form-control\" name=\"tipo\" value=\"$Produtor[Tipo]\">
+                  <label for=\"inputTipo\">Municipio</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Municipio\" value=\"$Fazenda[Municipio]\">
                 </div>
                 <div class=\"form-group col-md-6\">
-                    <label for=\"inputEspecificacao\">Descrição</label>
-                    <textarea class=\"form-control\" name=\"especificacao\" rows=\"3\">$Produtor[Especificacao]</textarea>
-                  </div>
+                  <label for=\"inputTipo\">Extensao</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Extensao\" value=\"$Fazenda[Extensao]\">
+                </div>
+                <div class=\"form-group col-md-6\">
+                  <label for=\"inputTipo\">Coordenadas</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Coordenadas\" value=\"$Fazenda[Coordenadas]\">
+                </div>
               <button type=\"submit\" class=\"btn btn-primary ml-3\">Alterar</button>
               </row>
             </form>";

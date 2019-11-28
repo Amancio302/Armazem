@@ -4,7 +4,7 @@
 
     function updateById($data){
       $Estoque = new Estoque();
-      $Estoque->updateById($data['id'], $data['nome'], $data['tipo'], $data['especificacao']);
+      $Estoque->updateById($data['id'], $data['Quantidade'], $data['Produto']);
     }
 
     function getById($id){
@@ -19,18 +19,14 @@
         echo "<form method=\"POST\">
               <row>
                 <div class=\"form-group col-md-6 pt-2\">
-                  <input type=\"hidden\" name=\"id\" value=\"$Produtor[idProdutor]\">
-                  <label for=\"inputNome\">Nome</label>
-                  <input type=\"text\" class=\"form-control\" name=\"nome\" value=\"$Produtor[Nome]\">
+                  <input type=\"hidden\" name=\"id\" value=\"$Estoque[idEstoque]\">
+                  <label for=\"inputNome\">Quantidade</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Quantidade\" value=\"$Estoque[Quantidade]\">
                 </div>
                 <div class=\"form-group col-md-6\">
-                  <label for=\"inputTipo\">Tipo</label>
-                  <input type=\"text\" class=\"form-control\" name=\"tipo\" value=\"$Produtor[Tipo]\">
+                  <label for=\"inputTipo\">Produto</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Produto\" value=\"$Estoque[Produto]\">
                 </div>
-                <div class=\"form-group col-md-6\">
-                    <label for=\"inputEspecificacao\">Descrição</label>
-                    <textarea class=\"form-control\" name=\"especificacao\" rows=\"3\">$Produtor[Especificacao]</textarea>
-                  </div>
               <button type=\"submit\" class=\"btn btn-primary ml-3\">Alterar</button>
               </row>
             </form>";

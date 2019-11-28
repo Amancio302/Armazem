@@ -4,7 +4,7 @@
 
     function updateById($data){
       $Comprador = new Comprador();
-      $Comprador->updateById($data['id'], $data['nome'], $data['tipo'], $data['especificacao']);
+      $Comprador->updateById($data['id'], $data['CNPJ'], $data['Nome'], $data['Telefone'], $data['CEP'], $data['Bairro'], $data['Rua'], $data['Numero'], $data['Complemento']);
     }
 
     function getById($id){
@@ -19,18 +19,38 @@
         echo "<form method=\"POST\">
               <row>
                 <div class=\"form-group col-md-6 pt-2\">
-                  <input type=\"hidden\" name=\"id\" value=\"$Produtor[idProdutor]\">
+                  <input type=\"hidden\" name=\"id\" value=\"$Comprador[idComprador]\">
                   <label for=\"inputNome\">Nome</label>
-                  <input type=\"text\" class=\"form-control\" name=\"nome\" value=\"$Produtor[Nome]\">
+                  <input type=\"text\" class=\"form-control\" name=\"Nome\" value=\"$Comprador[Nome]\">
                 </div>
                 <div class=\"form-group col-md-6\">
-                  <label for=\"inputTipo\">Tipo</label>
-                  <input type=\"text\" class=\"form-control\" name=\"tipo\" value=\"$Produtor[Tipo]\">
+                  <label for=\"inputTipo\">CNPJ</label>
+                  <input type=\"text\" class=\"form-control\" name=\"CNPJ\" value=\"$Comprador[CNPJ]\">
                 </div>
                 <div class=\"form-group col-md-6\">
-                    <label for=\"inputEspecificacao\">Descrição</label>
-                    <textarea class=\"form-control\" name=\"especificacao\" rows=\"3\">$Produtor[Especificacao]</textarea>
-                  </div>
+                  <label for=\"inputTipo\">Telefone</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Telefone\" value=\"$Comprador[Telefone]\">
+                </div>
+                <div class=\"form-group col-md-6\">
+                  <label for=\"inputTipo\">CEP</label>
+                  <input type=\"text\" class=\"form-control\" name=\"CEP\" value=\"$Comprador[CEP]\">
+                </div>
+                <div class=\"form-group col-md-6\">
+                  <label for=\"inputTipo\">Bairro</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Bairro\" value=\"$Comprador[Bairro]\">
+                </div>
+                <div class=\"form-group col-md-6\">
+                  <label for=\"inputTipo\">Rua</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Rua\" value=\"$Comprador[Rua]\">
+                </div>
+                <div class=\"form-group col-md-6\">
+                  <label for=\"inputTipo\">Numero</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Numero\" value=\"$Comprador[Numero]\">
+                </div>
+                <div class=\"form-group col-md-6\">
+                  <label for=\"inputTipo\">Complemento</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Complemento\" value=\"$Comprador[Complemento]\">
+                </div>
               <button type=\"submit\" class=\"btn btn-primary ml-3\">Alterar</button>
               </row>
             </form>";

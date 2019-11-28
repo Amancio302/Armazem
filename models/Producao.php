@@ -9,6 +9,7 @@
       $connection = $this->connect();
       $data = "($quantidade, $safra, $produtor, $fazenda, $produto, $estoque)";
       $sql = "INSERT INTO $this->table (Quantidade, Safra, idProdutor, idFazenda, idProduto, idEstoque) VALUES $data";
+      echo $sql;
       mysqli_query($connection, $sql);
       mysqli_close($connection);
     }

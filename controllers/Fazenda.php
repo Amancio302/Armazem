@@ -1,6 +1,6 @@
 <?php
     include_once("../models/Fazenda.php");
-    include_once("../views/Fazenda-view.php");
+    include_once("../views/fazenda-view.php");
 
     function getAll(){
       $Fazenda = new Fazenda();

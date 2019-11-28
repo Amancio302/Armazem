@@ -23,6 +23,7 @@
                     <th scope=\"col\">Produtor</th>
                     <th scope=\"col\">Fazenda</th>
                     <th scope=\"col\">Produto</th>
+                    <th scope=\"col\">Estoque</th>
                     <th scope=\"col\">Opções</th>
                   </tr>
                 </thead>
@@ -31,9 +32,10 @@
         echo     "<tr>
                     <td>$dados[Quantidade]</td>
                     <td>$dados[Safra]</td>
-                    <td>$dados[Produtor]</td>
-                    <td>$dados[Fazenda]</td>
-                    <td>$dados[Produto]</td>
+                    <td>$dados[idProdutor]</td>
+                    <td>$dados[idFazenda]</td>
+                    <td>$dados[idProduto]</td>
+                    <td>$dados[idEstoque]</td>
                     <td>
                       <a href=\"editarProducao.php?id=$dados[idProducao]\"><button type=\"button\" class=\"btn btn-primary\">Editar</button></a>
                       <a href=\"Producao.php?function=delete&id=$dados[idProducao]\"><button type=\"button\" class=\"btn btn-danger\">Excluir</button<\a>

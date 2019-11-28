@@ -4,7 +4,7 @@
 
     function updateById($data){
       $Produtor = new Produtor();
-      $Produtor->updateById($data['id'], $data['nome'], $data['tipo'], $data['especificacao']);
+      $Produtor->updateById($data['id'], $data['Nome'], $data['CNPJ'], $data['Telefone']);
     }
 
     function getById($id){
@@ -21,16 +21,16 @@
                 <div class=\"form-group col-md-6 pt-2\">
                   <input type=\"hidden\" name=\"id\" value=\"$Produtor[idProdutor]\">
                   <label for=\"inputNome\">Nome</label>
-                  <input type=\"text\" class=\"form-control\" name=\"nome\" value=\"$Produtor[Nome]\">
+                  <input type=\"text\" class=\"form-control\" name=\"Nome\" value=\"$Produtor[Nome]\">
                 </div>
                 <div class=\"form-group col-md-6\">
-                  <label for=\"inputTipo\">Tipo</label>
-                  <input type=\"text\" class=\"form-control\" name=\"tipo\" value=\"$Produtor[Tipo]\">
+                  <label for=\"inputTipo\">CNPJ</label>
+                  <input type=\"text\" class=\"form-control\" name=\"CNPJ\" value=\"$Produtor[CNPJ]\">
                 </div>
                 <div class=\"form-group col-md-6\">
-                    <label for=\"inputEspecificacao\">Descrição</label>
-                    <textarea class=\"form-control\" name=\"especificacao\" rows=\"3\">$Produtor[Especificacao]</textarea>
-                  </div>
+                  <label for=\"inputTipo\">Telefone</label>
+                  <input type=\"text\" class=\"form-control\" name=\"Telefone\" value=\"$Produtor[Telefone]\">
+                </div>
               <button type=\"submit\" class=\"btn btn-primary ml-3\">Alterar</button>
               </row>
             </form>";
