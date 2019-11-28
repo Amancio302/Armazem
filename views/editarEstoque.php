@@ -20,35 +20,11 @@
     <a class="navbar-brand" href="./index.php">GrãosDB</a>
   </nav>
 
-  <h1 class="text-center pt-1">Transacao</h1>
+  <h1 class="text-center pt-1">Estoque</h1>
 
-  <form method="POST">
-    <div class="form-group col-md-6 pt-2">
-      <label for="inputValor">Valor</label>
-      <input type="text" class="form-control" name="Valor">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputDataTransacao">Data de transação</label>
-      <input type="text" class="form-control" name="DataTransacao">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputQuantidade">Quantidade</label>
-      <input type="text" class="form-control" name="Quantidade">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputEstoque">Estoque</label>
-      <input type="text" class="form-control" name="Estoque">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputComprador">Comprador</label>
-      <input type="text" class="form-control" name="Comprador">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputTransportadora">Transportadora</label>
-      <input type="text" class="form-control" name="Transportadora">
-    </div>
-  <button type="submit" class="btn btn-success ml-3">Inserir</button>
-</form>
+  <?php
+    form();
+  ?>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

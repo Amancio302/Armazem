@@ -31,6 +31,22 @@
       <label for="inputSafra">Safra</label>
       <input type="text" class="form-control" name="Safra">
     </div>
+    <div class="form-group col-md-6 pt-2">
+      <label for="inputProdutor">Produtor</label>
+      <input type="text" class="form-control" name="Produtor">
+    </div>
+    <div class="form-group col-md-6 pt-2">
+      <label for="inputFazenda">Fazenda</label>
+      <input type="text" class="form-control" name="Fazenda">
+    </div>
+    <div class="form-group col-md-6 pt-2">
+      <label for="inputProduto">Produto</label>
+      <input type="text" class="form-control" name="Produto">
+    </div>
+    <div class="form-group col-md-6 pt-2">
+      <label for="inputEstoque">Estoque</label>
+      <input type="text" class="form-control" name="Estoque">
+    </div>
   <button type="submit" class="btn btn-success ml-3">Inserir</button>
 </form>
 
