@@ -33,7 +33,7 @@
     </div>
     <div class="form-group col-md-6">
       <label for="inputExtensao">Extensão</label>
-      <input type="text" class="form-control" name="Extensão">
+      <input type="text" class="form-control" name="Extensao">
     </div>
     <div class="form-group col-md-6">
       <label for="inputCoordenadas">Coordenadas</label>

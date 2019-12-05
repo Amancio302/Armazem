@@ -4,7 +4,7 @@
 
     function updateById($data){
       $Produtor = new Produtor();
-      $Produtor->updateById($data['id'], $data['Nome'], $data['CNPJ'], $data['Telefone']);
+      $Produtor->updateById($data['id'], $data['CNPJ'], $data['Nome'], $data['Telefone']);
     }
 
     function getById($id){
